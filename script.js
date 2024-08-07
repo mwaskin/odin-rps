@@ -15,9 +15,14 @@ let computerChoice = getComputerChoice();
 console.log("Computer choice: " + computerChoice);
 
 // create function getHumanChoice
-// prompt user to enter ROCK, PAPER, or SCISSORS
-// return input value coverted to upperCase
+function getHumanChoice() {
+	// prompt user to enter ROCK, PAPER, or SCISSORS
+	// return input value coverted to upperCase
+	return prompt("Enter ROCK, PAPER, or SCISSORS").toUpperCase();
+}
 
 // create variable humanChoice and assign it return value of getHumanChoice
+let humanChoice = getHumanChoice();
 
 // TEST: log humanChoice
+console.log("Human choice: " + humanChoice);
