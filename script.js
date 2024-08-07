@@ -28,6 +28,25 @@ let humanChoice = getHumanChoice();
 console.log("Human choice: " + humanChoice);
 
 // declare boolean value isValid, init as false, to show if humanChoice is a valid option
-// while isValid is false
-// if choices array includes humanChoice--> isValid is true--> end
-// else prompt user for new input and assign to humanChoice
+let isValid = false;
+// create function checkHumanChoice
+function checkHumanChoice() {
+	// while isValid is false
+	while (!isValid) {
+		// if choices array includes humanChoice--> isValid is true--> end
+		if (choices.includes(humanChoice)) {
+			isValid = true;
+			// TEST
+			console.log("Response validated");
+			return;
+			// else prompt user for new input and assign to humanChoice
+		} else {
+			alert(
+				"Invalid response. You must choose one of the following three options: ROCK, PAPER, or SCISSORS"
+			);
+			humanChoice = getHumanChoice();
+		}
+	}
+}
+
+checkHumanChoice();
