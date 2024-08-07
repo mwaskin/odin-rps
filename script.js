@@ -26,3 +26,8 @@ let humanChoice = getHumanChoice();
 
 // TEST: log humanChoice
 console.log("Human choice: " + humanChoice);
+
+// declare boolean value isValid, init as false, to show if humanChoice is a valid option
+// while isValid is false
+// if choices array includes humanChoice--> isValid is true--> end
+// else prompt user for new input and assign to humanChoice
