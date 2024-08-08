@@ -50,3 +50,10 @@ function checkHumanChoice() {
 }
 
 checkHumanChoice();
+
+// create variables to hold player and computer scores
+
+// create function playRound
+// takes human and computer choices and compares them
+// declare winner
+// increment score
