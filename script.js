@@ -52,8 +52,53 @@ function checkHumanChoice() {
 checkHumanChoice();
 
 // create variables to hold player and computer scores
+let humanScore = 0;
+let computerScore = 0;
 
 // create function playRound
-// takes human and computer choices and compares them
-// declare winner
-// increment score
+function playRound(humanChoice, computerChoice) {
+	// takes human and computer choices and compares them
+	if (humanChoice === computerChoice) {
+		alert("It's a TIE!");
+		return;
+	} else if (humanChoice === "ROCK") {
+		switch (computerChoice) {
+			case "SCISSORS":
+				// declare winner
+				alert("ROCK beats SCISSORS - YOU WIN!");
+				// increment score
+				humanScore++;
+				break;
+			case "PAPER":
+				alert("PAPER beats ROCK - YOU LOSE!");
+				computerScore++;
+				break;
+		}
+	} else if (humanChoice === "PAPER") {
+		switch (computerChoice) {
+			case "ROCK":
+				alert("PAPER beats ROCK - YOU WIN!");
+				humanScore++;
+				break;
+			case "SCISSORS":
+				alert("SCISSORS beats PAPER - YOU LOSE!");
+				computerScore++;
+				break;
+		}
+	} else {
+		switch (computerChoice) {
+			case "PAPER":
+				alert("SCISSORS beats PAPER - YOU WIN!");
+				humanScore++;
+				break;
+			case "ROCK":
+				alert("ROCK beats SCISSORS - YOU LOSE!");
+				computerScore++;
+				break;
+		}
+	}
+}
+
+playRound(humanChoice, computerChoice);
+console.log("human: " + humanScore);
+console.log("computer: " + computerScore);
