@@ -1,18 +1,18 @@
 const choices = ["ROCK", "PAPER", "SCISSORS"];
-let computerChoice = getComputerChoice();
-let humanChoice = getHumanChoice();
+let computerChoice;
+let humanChoice;
 let humanScore = 0;
 let computerScore = 0;
 
-checkHumanChoice();
+// checkHumanChoice();
 playGame();
 
 function getComputerChoice() {
-	return choices[Math.floor(Math.random() * 3)];
+	computerChoice = choices[Math.floor(Math.random() * 3)];
 }
 
 function getHumanChoice() {
-	return prompt("Enter ROCK, PAPER, or SCISSORS").toUpperCase();
+	humanChoice = prompt("Enter ROCK, PAPER, or SCISSORS").toUpperCase();
 }
 
 function checkHumanChoice() {
@@ -25,7 +25,7 @@ function checkHumanChoice() {
 			alert(
 				"Invalid response. You must choose one of the following three options: ROCK, PAPER, or SCISSORS"
 			);
-			humanChoice = getHumanChoice();
+			getHumanChoice();
 		}
 	}
 }
@@ -72,6 +72,9 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame() {
 	for (let i = 1; i <= 5; i++) {
+		getComputerChoice();
+		getHumanChoice();
+		checkHumanChoice();
 		playRound(humanChoice, computerChoice);
 		console.log("human: " + humanScore);
 		console.log("computer: " + computerScore);
