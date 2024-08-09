@@ -41,18 +41,7 @@ function checkHumanChoice(humanChoice) {
 let humanScore = 0;
 let computerScore = 0;
 
-// create function playRound
-function playRound() {
-	// create variable computerChoice and assign it return value of getComputerChoice
-	let computerChoice = getComputerChoice();
-	// TEST: log computerChoice
-	console.log("Computer choice: " + computerChoice);
-	// create variable humanChoice and assign it return value of getHumanChoice
-	let humanChoice = getHumanChoice();
-	// TEST: log humanChoice
-	console.log("Human choice: " + humanChoice);
-	checkHumanChoice(humanChoice);
-
+function compareChoices(humanChoice, computerChoice) {
 	// takes human and computer choices and compares them
 	if (humanChoice === computerChoice) {
 		alert("It's a TIE!");
@@ -93,6 +82,20 @@ function playRound() {
 				break;
 		}
 	}
+}
+
+// create function playRound
+function playRound() {
+	// create variable computerChoice and assign it return value of getComputerChoice
+	let computerChoice = getComputerChoice();
+	// TEST: log computerChoice
+	console.log("Computer choice: " + computerChoice);
+	// create variable humanChoice and assign it return value of getHumanChoice
+	let humanChoice = getHumanChoice();
+	// TEST: log humanChoice
+	console.log("Human choice: " + humanChoice);
+	checkHumanChoice(humanChoice);
+	compareChoices(humanChoice, computerChoice);
 }
 
 // create function playGame
