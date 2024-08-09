@@ -102,3 +102,7 @@ function playRound(humanChoice, computerChoice) {
 playRound(humanChoice, computerChoice);
 console.log("human: " + humanScore);
 console.log("computer: " + computerScore);
+
+// create function playGame
+// for loop to play 5 rounds
+// compare scores and declare winner
