@@ -1,18 +1,19 @@
 const choices = ["ROCK", "PAPER", "SCISSORS"];
+let computerChoice = getComputerChoice();
+let humanChoice = getHumanChoice();
+let humanScore = 0;
+let computerScore = 0;
+
+checkHumanChoice();
+playGame();
 
 function getComputerChoice() {
 	return choices[Math.floor(Math.random() * 3)];
 }
 
-let computerChoice = getComputerChoice();
-
 function getHumanChoice() {
 	return prompt("Enter ROCK, PAPER, or SCISSORS").toUpperCase();
 }
-
-let humanChoice = getHumanChoice();
-
-console.log("Human choice: " + humanChoice);
 
 function checkHumanChoice() {
 	let isValid = false;
@@ -28,11 +29,6 @@ function checkHumanChoice() {
 		}
 	}
 }
-
-checkHumanChoice();
-
-let humanScore = 0;
-let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
 	if (humanChoice === computerChoice) {
@@ -94,5 +90,3 @@ function playGame() {
 		);
 	}
 }
-
-playGame();
