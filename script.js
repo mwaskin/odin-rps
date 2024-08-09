@@ -99,10 +99,28 @@ function playRound(humanChoice, computerChoice) {
 	}
 }
 
-playRound(humanChoice, computerChoice);
-console.log("human: " + humanScore);
-console.log("computer: " + computerScore);
-
 // create function playGame
-// for loop to play 5 rounds
-// compare scores and declare winner
+function playGame() {
+	// for loop to play 5 rounds
+	for (let i = 1; i <= 5; i++) {
+		playRound(humanChoice, computerChoice);
+		console.log("human: " + humanScore);
+		console.log("computer: " + computerScore);
+	}
+	// compare scores and declare winner
+	if (humanScore === computerScore) {
+		alert(
+			`GAME OVER! Your Score: ${humanScore}; Computer Score: ${computerScore}. IT'S A TIE!`
+		);
+	} else if (humanScore > computerScore) {
+		alert(
+			`GAME OVER! Your Score: ${humanScore}; Computer Score: ${computerScore}. YOU WIN!`
+		);
+	} else {
+		alert(
+			`GAME OVER! Your Score: ${humanScore}; Computer Score: ${computerScore}. OH NO, YOU LOST!`
+		);
+	}
+}
+
+playGame();
