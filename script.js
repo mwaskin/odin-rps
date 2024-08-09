@@ -15,10 +15,10 @@ function getHumanChoice() {
 	return prompt("Enter ROCK, PAPER, or SCISSORS").toUpperCase();
 }
 
-// declare boolean value isValid, init as false, to show if humanChoice is a valid option
-let isValid = false;
 // create function checkHumanChoice
 function checkHumanChoice(humanChoice) {
+	// declare boolean value isValid, init as false, to show if humanChoice is a valid option
+	let isValid = false;
 	// while isValid is false
 	while (!isValid) {
 		// if choices array includes humanChoice--> isValid is true--> end
