@@ -8,12 +8,6 @@ function getComputerChoice() {
 	return choices[Math.floor(Math.random() * 3)];
 }
 
-// create variable computerChoice and assign it return value of getComputerChoice
-let computerChoice = getComputerChoice();
-
-// TEST: log computerChoice
-console.log("Computer choice: " + computerChoice);
-
 // create function getHumanChoice
 function getHumanChoice() {
 	// prompt user to enter ROCK, PAPER, or SCISSORS
@@ -21,16 +15,10 @@ function getHumanChoice() {
 	return prompt("Enter ROCK, PAPER, or SCISSORS").toUpperCase();
 }
 
-// create variable humanChoice and assign it return value of getHumanChoice
-let humanChoice = getHumanChoice();
-
-// TEST: log humanChoice
-console.log("Human choice: " + humanChoice);
-
 // declare boolean value isValid, init as false, to show if humanChoice is a valid option
 let isValid = false;
 // create function checkHumanChoice
-function checkHumanChoice() {
+function checkHumanChoice(humanChoice) {
 	// while isValid is false
 	while (!isValid) {
 		// if choices array includes humanChoice--> isValid is true--> end
@@ -49,14 +37,22 @@ function checkHumanChoice() {
 	}
 }
 
-checkHumanChoice();
-
 // create variables to hold player and computer scores
 let humanScore = 0;
 let computerScore = 0;
 
 // create function playRound
-function playRound(humanChoice, computerChoice) {
+function playRound() {
+	// create variable computerChoice and assign it return value of getComputerChoice
+	let computerChoice = getComputerChoice();
+	// TEST: log computerChoice
+	console.log("Computer choice: " + computerChoice);
+	// create variable humanChoice and assign it return value of getHumanChoice
+	let humanChoice = getHumanChoice();
+	// TEST: log humanChoice
+	console.log("Human choice: " + humanChoice);
+	checkHumanChoice(humanChoice);
+
 	// takes human and computer choices and compares them
 	if (humanChoice === computerChoice) {
 		alert("It's a TIE!");
@@ -103,7 +99,7 @@ function playRound(humanChoice, computerChoice) {
 function playGame() {
 	// for loop to play 5 rounds
 	for (let i = 1; i <= 5; i++) {
-		playRound(humanChoice, computerChoice);
+		playRound();
 		console.log("human: " + humanScore);
 		console.log("computer: " + computerScore);
 	}
