@@ -4,7 +4,6 @@ let humanChoice;
 let humanScore = 0;
 let computerScore = 0;
 
-// checkHumanChoice();
 playGame();
 
 function getComputerChoice() {
@@ -76,8 +75,6 @@ function playGame() {
 		getHumanChoice();
 		checkHumanChoice();
 		playRound(humanChoice, computerChoice);
-		console.log("human: " + humanScore);
-		console.log("computer: " + computerScore);
 	}
 	if (humanScore === computerScore) {
 		alert(
